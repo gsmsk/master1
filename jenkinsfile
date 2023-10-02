@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('First Build') {
+            steps {
+                echo 'Hello, this is my first build'
+            }
+        }
+
+        stage('Success Message') {
+            steps {
+                echo 'This was successfully done'
+            }
+        }
+
+        stage('Next Job') {
+            steps {
+                echo 'I will now create another job'
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'This stage will always run'
+        }
+    }
+}
